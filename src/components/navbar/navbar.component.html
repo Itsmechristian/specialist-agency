@@ -1,0 +1,21 @@
+<nav>
+  <div class="container">
+    <div class="logo">
+      <h1>Specialist Agency</h1>
+    </div>
+    <div class="links">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="about">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </div>
+    <div class="hamburger" (click)="animateNavbar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menus" [@animatenavbar]="navbarState">
+
+    </div>
+  </div>
+</nav>

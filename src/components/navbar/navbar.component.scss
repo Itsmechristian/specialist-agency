@@ -1,0 +1,78 @@
+nav{
+  z-index: 999;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid rgb(221, 221, 221);
+
+  .container{
+    justify-content: space-between;
+    display: flex;
+    padding: 10px 0px;
+
+    .logo{
+
+      > h1{
+        color: #11409d;
+        font-size: 2rem;
+        font-weight: 300;
+      }
+    }
+    .links{
+      padding: 10px;
+
+      li{
+        display: inline-block;
+        padding: 0px 10px;
+
+        a{
+          color: #474747;
+        }
+      }
+    }
+    .hamburger{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .links{
+    display: none;
+  }
+  .hamburger{
+    height: 27px;
+    width: 32px;
+    top: 10px;
+    display: block !important;
+    position: relative;
+
+    span{
+      position: absolute;
+      height: 0px;
+      width: 25px;
+      border: 3px solid #474747;
+      border-radius: 10px;
+      right: 0;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2) {
+        top: 10px;
+      }
+      &:nth-child(3) {
+        top: 20px;
+      }
+    }
+  }
+  .menus{
+    position: absolute;
+    top: 97%;
+    height: 300px;
+    width: 300px;
+    right: 0;
+    background: #fff;
+  }
+}
