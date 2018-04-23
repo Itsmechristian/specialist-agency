@@ -76,3 +76,9 @@ nav{
     background: #fff;
   }
 }
+
+@media screen and (max-width: 560px) {
+  nav{
+    height: auto;
+  }
+}
