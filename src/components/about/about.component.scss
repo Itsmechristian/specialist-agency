@@ -24,15 +24,36 @@ h1{
         padding: 50px 0px;
         .box{
             margin: 10% 0px;
+
+            &:nth-child(1) {
+                .box-wrapper{
+                    .left-side{
+                       float: left;
+                    }
+                    .right-side{
+                       float: left;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                .box-wrapper{
+                    .left-side{
+                       float: right;
+                    }
+                    .right-side{
+                       float: right;
+                    }
+                } 
+            }
             .box-wrapper{
+                background: #fff;
                 width: 80%;
                 margin: 0 auto;
-                height: 300px;
+                height: 350px;
                 box-shadow:rgb(204, 204, 204) 0px 0px 27px 0px;
            }
-            background: #fff;
             .left-side{
-                float: left;
                 height: 100%;
                 width: 50%;
                 border-bottom: 4px solid #2e6de9;
@@ -42,7 +63,6 @@ h1{
                }
            }
             .right-side{
-                float: left;
                 height: 100%;
                 width: 50%;
                 background: #fff;
@@ -59,4 +79,15 @@ h1{
            }
        }
    }
+}
+@media screen and (max-width: 1200px) {
+    .about{
+        .container{
+            .box{
+                .box-wrapper{
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
