@@ -1,11 +1,31 @@
+@font-face {
+    font-family: Raleway;
+    src: url('/assets/fonts/raleway.ttf');
+  }
+
 .contact {
-    padding: 60px 0px;
+    header{
+        height: 400px;
+        width: 100%;
+        background: url('/assets/images/teaching.png') 100% 70%;
+
+        .container{
+            height: 100%;
+            
+            h1{
+                position: absolute;
+                top: 50%;
+                font-size: 4rem;
+                font-family: Raleway;
+                color: #fff;
+            }
+        }
+    }
     
-    .container{
-        .info{
-            display: inline-block;
-            vertical-align: top;
-            width: 30%;
+    > .container{
+        padding: 50px 0px;
+        
+        .wrapper{
 
             h1{
                 display: inline-block;
@@ -18,12 +38,18 @@
                     position: absolute;
                     border-top: 1px solid #11409d;
                     border-bottom: 1px solid #11409d;
-                    top: 15px;
+                    top: 20px;
                     width: 60px;
                     left: 100%;
                     margin-left: 20px;
                 }
             }
+        }
+        .info{
+            display: inline-block;
+            vertical-align: top;
+            width: 30%;
+
             .info-wrapper, .address, .follow{
                 padding: 10px 0px;
 
@@ -32,7 +58,13 @@
                     
                     &:nth-child(1) {
                         padding: 10px 0px;  
+                        margin: 15px 0px;
                         font-size: 1.2rem;
+                    }
+
+                    &:nth-child(n+2) {
+                        font-family: Raleway;
+                        color: rgb(71, 71, 71);
                     }
                 }
             }
@@ -45,30 +77,47 @@
             form{
                 background: #fff;
                 box-shadow: rgb(204, 204, 204) 0px 0px 27px 0px;
-                margin: 20px 0px;
-                width: 100%;
+                width: 90%;
                 height: auto;
-                padding: 30px;
+                padding: 5%;
                 
                 .wrapper{
                     margin: 30px 0px;
 
                     label{
+                        display: block;
+                        margin: 5px 0px;
                         font-weight: 300;
                         color: #787878;
+                        font-family: "Open Sans", sans-serif;
+                        color: rgb(71, 71, 71);
                     }
-                    input{
+                    input, textarea{
                         display: block;
                         width: 100%;
                         border: 1px solid rgb(222, 222, 222);
+                    }
+
+                    input{
                         height: 40px;
-                    
-                        &#message{
-                            height: 300px;
-                        }
+                    }
+                    textarea{
+                        font: 400 13.3333px Arial;
+                        height: 300px;
+                        resize: none;
                     }
                 }
+                >a{
+                    color: #fff;
+                    background: #2e6de9;
+                    padding: 5px 10px;
+                    text-align: right;
+                }
             }
+        }
+        .map-ctn{
+            display: block;
+            width: 100%;
         }
     }
 }

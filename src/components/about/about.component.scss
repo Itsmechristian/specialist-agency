@@ -1,5 +1,16 @@
+@font-face {
+    font-family: Questrial;
+    src: url('/assets/fonts/questrial.otf');
+}
+@font-face {
+    font-family: Raleway;
+    src: url('/assets/fonts/raleway.ttf');
+}
+
 h1{
     color: #474747;
+    font-family: Questrial,'Open Sans', sans-serif;
+
     &.with-line{
         position: relative;
         display: inline-block;
@@ -16,78 +27,34 @@ h1{
        }
    }
 }
+
 .about{
-    // Change padding if there is an header image padding: 60px 0px;
     background: linear-gradient(90deg, #fff (10px - 2px), transparent 1%) center, linear-gradient(#fff (10px - 2px), transparent 1%) center, #7777771e;
     background-size: 10px 10px;
+
     .container{
-        padding: 50px 0px;
-        .box{
-            margin: 10% 0px;
+        height: 100%;
 
-            &:nth-child(1) {
-                .box-wrapper{
-                    .left-side{
-                       float: left;
-                    }
-                    .right-side{
-                       float: left;
-                    }
-                }
-            }
+    }
 
-            &:nth-child(2) {
-                .box-wrapper{
-                    .left-side{
-                       float: right;
-                    }
-                    .right-side{
-                       float: right;
-                    }
-                } 
-            }
-            .box-wrapper{
-                background: #fff;
-                width: 80%;
-                margin: 0 auto;
-                height: 350px;
-                box-shadow:rgb(204, 204, 204) 0px 0px 27px 0px;
-           }
-            .left-side{
-                height: 100%;
-                width: 50%;
-                border-bottom: 4px solid #2e6de9;
-                img{
-                    width: 100%;
-                    height: 100%;
-               }
-           }
-            .right-side{
-                height: 100%;
-                width: 50%;
-                background: #fff;
-                border-bottom: 4px solid #fff;
-                .text-wrapper{
-                    padding: 40px;
-                    p{
-                        color: rgb(71, 71, 71);
-                        font-weight: 300;
-                        line-height: 1.4;
-                        font-size: 0.9rem;
-                   }
-               }
-           }
-       }
-   }
-}
-@media screen and (max-width: 1200px) {
-    .about{
+    header{
+        height: 400px;  
+        width: 100%;
+        background: url('/assets/images/teamwork.jpg') 100% 60%;
+
         .container{
-            .box{
-                .box-wrapper{
-                    width: 100%;
-                }
+
+            h1{
+                position: absolute;
+                top: 50%;
+                color: #fff;
+                font-size: 4rem;
             }
         }
     }
+
+
+}
+@media screen and (max-width: 1200px) {
+
 }

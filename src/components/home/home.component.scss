@@ -40,7 +40,7 @@
 
 header{
   height: auto;
-  background: url('../../assets/images/building.png');
+  background: url('/assets/images/building.png');
 
   .container{
     height: 700px;
@@ -68,11 +68,7 @@ header{
 .info{
   height: 800px;
   padding: 20px 0px;
-	background:
-		linear-gradient(90deg, #fff (10px - 2px), transparent 1%) center,
-		linear-gradient(#fff (10px - 2px), transparent 1%) center,
-	 #7777771e;
- 	background-size: 10px 10px;
+	background:#fff;
 
   .content{
     margin: 0 auto;
@@ -256,10 +252,7 @@ header{
 }
 .testimonial{
   height: 700px;
-  background:
-  linear-gradient(90deg, #fff (10px - 2px), transparent 1%) center,
-  linear-gradient(#fff (10px - 2px), transparent 1%) center,
- #7777771e;
+  background: #fff;
  background-size: 10px 10px;
 
  .container{

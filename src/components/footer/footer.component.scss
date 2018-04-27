@@ -15,6 +15,15 @@ footer{
 
         .section{
             flex: 1;
+      
+            .logo{
+                display: inline-block;
+                margin: 5px;
+                img{
+                    height: 40px;
+                    width: 40px;
+                }
+            }
         }
     }
 }

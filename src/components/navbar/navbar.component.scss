@@ -13,10 +13,12 @@ nav{
 
     .logo{
 
-      > h1{
-        color: #11409d;
-        font-size: 2rem;
-        font-weight: 300;
+      a{
+        h1{
+          color: #11409d;
+          font-size: 2rem;
+          font-weight: 300;
+        }
       }
     }
     .links{
