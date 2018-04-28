@@ -27,7 +27,10 @@ export class HomeComponent implements AfterViewInit{
   fadeState: any = '';
   testimonyIndex: number = 0;
 
-  testimonies: Array<Object> = 
+  testimonies: Array<{
+     name: string,
+     testimony: string
+  }> = 
   [
    {
      name: "John Doe",
