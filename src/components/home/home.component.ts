@@ -7,17 +7,17 @@ import { trigger, state, style, animate, transition, group, query } from '@angul
   styleUrls: ['./home.component.scss'],
   animations: [
     trigger('fade', [
-      transition('* => animated', [
+      transition('* => animate', [
         style({
           opacity: 0, 
         }),
-        animate(200, style({opacity: 1}))
+        animate(500, style({opacity: 1}))
       ]),
-      transition('animated => *', [
+      transition('animate => *', [
         style({
           opacity: 0, 
         }),
-        animate(200, style({opacity: 1}))
+        animate(500, style({opacity: 1}))
       ])
   
   ])
@@ -56,19 +56,17 @@ export class HomeComponent implements AfterViewInit{
   constructor() {}
 
   ngAfterViewInit() {
-   
+    setInterval(() => {
+      
+      if(this.testimonyIndex < this.testimonies.length - 1) {
+        (this.fadeState === '') ? this.fadeState = 'animate' : this.fadeState = '';
+        this.testimonyIndex = this.testimonyIndex + 1;
+      }
+      else{
+        (this.fadeState === '') ? this.fadeState = 'animate' : this.fadeState = '';
+        this.testimonyIndex = 0;
+      }
+    }, 3000)
     
-  }
-  changeTestimony(i) {
-    this.testimonyIndex = i;
-    (this.fadeState === '') ? this.fadeState = 'animated' : this.fadeState = '';
-
-   let background = this.dot._results[this.testimonyIndex].nativeElement.style.background
-
-   if(background === '') {
-    this.dot._results[this.testimonyIndex].nativeElement.style.background = 'red'
-   }
-
- 
   }
 }
