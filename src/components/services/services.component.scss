@@ -1,3 +1,163 @@
+@font-face {
+    font-family: Questrial;
+    src: url('/assets/fonts/questrial.otf');
+}
+@font-face {
+    font-family: Raleway;
+    src: url('/assets/fonts/raleway.ttf');
+}
+
+h1{
+    color: #474747;
+    font-family: Questrial,'Open Sans', sans-serif;
+    
+    &.with-line{
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        &:after{
+            content: '';
+            position: absolute;
+            height: 2px;
+            border-bottom: 1px solid #11409d;
+            border-top: 1px solid #11409d;
+            top: 15px;
+            width: 100px;
+            left: 100%;
+            margin-left: 20px;
+       }
+   }
+}
+
 .services{
-    padding: 60px 0px;
+    .container{
+        height: 100%;
+    }
+
+    header{
+        height: 400px;
+        width: 100%;
+        background: url('/assets/images/teamwork.jpg') 100% 60%;
+        
+        .container{
+
+            h1{
+                text-transform: uppercase;
+                position: absolute;
+                top: 50%;
+                color: #fff;
+                font-size: 4rem;
+            }
+        }
+    }
+
+    .box-wrapper{
+        padding: 50px 0px;
+        
+        .box{
+            margin: 50px 0px;
+            height: auto;
+            width: 100%;
+            background: #fff;
+            box-shadow:rgb(204, 204, 204) 0px 0px 27px 0px;
+            overflow: auto;
+
+            .left-side{
+                border-bottom: 5px solid #2e6de9;
+
+                img{
+                    vertical-align: middle;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .right-side{
+                border-bottom: 5px solid #fff;
+                
+                .text-wrapper{
+                    width: 80%;
+                    padding: 10%;
+                    height: auto;
+                    
+                    p{
+                        color: #787878;
+                        font-weight: 300;
+                        line-height: 1.4;
+                        font-family: Raleway;
+                    }
+                }
+            }
+
+            .left-side, .right-side{
+                height: 100%;
+                width: 50%;
+                display: block;
+            }
+            &:nth-child(odd) {
+                .left-side, .right-side{
+                    float: left;                        
+                }
+            }
+
+            &:nth-child(even){
+                .left-side, .right-side{
+                    float: right;                        
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) {
+    .services{
+        .container{
+            .box-wrapper{
+                .box{
+                    .right-side{
+                        .text-wrapper{
+                            width: 90%;
+                            padding: 5%;
+
+                            p{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .services{
+        .container{
+            .box-wrapper{
+                .box{
+                    &:nth-child(odd), &:nth-child(even) {
+                        .left-side{
+                            display: block;
+                            width: 100%;
+    
+                        }
+                        .right-side{
+                            display: block;
+                            width: 100%;
+                     
+                        }
+                    }
+                    
+                }
+            }
+        }
+    } 
+}
+
+@media screen and (max-width: 560px){
+    h1.with-line{
+
+        &:after{
+            display: none !important;
+        }
+    }
 }

@@ -104,14 +104,10 @@
     <div class="testimony">
       <i class="fa fa-quote-right"></i>
       <div class="text-wrapper">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae molestias quia consectetur sunt fugit reiciendis nihil, quos vel labore tempore.</p>
-        <h3>John Doe</h3>
+        <p [@fade]="fadeState">{{testimonies[testimonyIndex].testimony}}</p>
+        <h3>{{testimonies[testimonyIndex].name}}</h3>
         <div class="dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+            <div class="dot" *ngFor="let length of testimonies; let i = index" (click)="changeTestimony(i)" #dot></div>
           </div>
       </div>
     </div>

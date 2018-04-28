@@ -12,6 +12,7 @@ h1{
     font-family: Questrial,'Open Sans', sans-serif;
 
     &.with-line{
+        text-transform: uppercase;
         position: relative;
         display: inline-block;
         &:after{
@@ -29,7 +30,7 @@ h1{
 }
 
 .about{
-    background: linear-gradient(90deg, #fff (10px - 2px), transparent 1%) center, linear-gradient(#fff (10px - 2px), transparent 1%) center, #7777771e;
+    background: #fff;
     background-size: 10px 10px;
 
     .container{
@@ -53,8 +54,110 @@ h1{
         }
     }
 
+    .container{
+        height: 100%;
 
+        .box-wrapper{
+            padding: 50px 0px;
+            
+            .box{
+                margin: 50px 0px;
+                height: auto;
+                width: 100%;
+                background: #fff;
+                box-shadow:rgb(204, 204, 204) 0px 0px 27px 0px;
+                overflow: auto;
+
+                .left-side{
+                    border-bottom: 5px solid #2e6de9;
+
+                    
+                    img{
+                        vertical-align: middle;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .right-side{
+                    border-bottom: 5px solid #fff;
+
+                    .text-wrapper{
+                        width: 80%;
+                        padding: 10%;
+                        height: auto;
+
+                        
+                        p{
+                            color: #787878;
+                            font-weight: 300;
+                            line-height: 1.4;
+                            font-family: Raleway;
+                        }
+                    }
+                }
+
+                .left-side, .right-side{
+                    height: 100%;
+                    width: 50%;
+                    display: block;
+                }
+                &:nth-child(odd) {
+                    .left-side, .right-side{
+                        float: left;                        
+                    }
+                }
+
+                &:nth-child(even){
+                    .left-side, .right-side{
+                        float: right;                        
+                    }
+                }
+            }
+        }
+    }
 }
-@media screen and (max-width: 1200px) {
 
+@media screen and (max-width: 1200px) {
+    .about{
+        .container{
+            .box-wrapper{
+                .box{
+                    .right-side{
+                        .text-wrapper{
+                            width: 90%;
+                            padding: 5%;
+
+                            p{
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 968px) {
+    .about{
+        .container{
+            .box-wrapper{
+                .box{
+                    &:nth-child(odd), &:nth-child(even) {
+                        .left-side{
+                            display: block;
+                            width: 100%;
+    
+                        }
+                        .right-side{
+                            display: block;
+                            width: 100%;
+                     
+                        }
+                    }
+                    
+                }
+            }
+        }
+    } 
 }

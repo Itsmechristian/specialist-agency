@@ -121,3 +121,13 @@
         }
     }
 }
+@media screen and (max-width: 968px) {
+    .contact{
+        >.container{
+            .info, .form{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

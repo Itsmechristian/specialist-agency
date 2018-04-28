@@ -27,3 +27,30 @@ footer{
         }
     }
 }
+
+@media screen and (max-width: 968px) {
+    footer{
+        .container{
+            display: block;
+
+            .section{
+                margin: 10px 0px;
+                display: inline-block;
+                width: 49%;
+                vertical-align: top;
+            }
+        }
+    }
+}
+@media screen and (max-width: 968px) {
+    footer{
+        .container{
+            display: block;
+
+            .section{
+                margin: 10px 0px;
+                width: 100%;
+            }
+        }
+    }
+}
