@@ -28,8 +28,8 @@ export class HomeComponent implements AfterViewInit{
   testimonyIndex: number = 0;
 
   testimonies: Array<{
-    name: string,
-    testimony: string
+     name: string,
+     testimony: string
   }> = 
   [
    {
