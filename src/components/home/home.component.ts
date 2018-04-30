@@ -1,5 +1,6 @@
 import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { trigger, state, style, animate, transition, group, query } from '@angular/animations';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'home-root',
@@ -27,6 +28,12 @@ export class HomeComponent implements AfterViewInit{
   fadeState: any = '';
   testimonyIndex: number = 0;
 
+  building: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/building.png';
+  image1: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/image1.jpg';
+  image3: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/image3.jpg';
+  image2: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/image2.jpg';
+
+  
   testimonies: Array<{
      name: string,
      testimony: string
@@ -56,7 +63,10 @@ export class HomeComponent implements AfterViewInit{
 
   @ViewChildren('dot') dot: any;
 
-  constructor() {}
+  constructor(
+    private sanitize: DomSanitizer
+  ) {}
+
 
   ngAfterViewInit() {
     setInterval(() => {
@@ -71,5 +81,10 @@ export class HomeComponent implements AfterViewInit{
       }
     }, 3000)
     
+  }
+
+  sanitizeSrc(imgurl) {
+    return this.sanitize.bypassSecurityTrustUrl(imgurl)
+
   }
 }

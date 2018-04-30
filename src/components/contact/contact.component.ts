@@ -8,6 +8,8 @@ declare const google: any;
     styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+    image6: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/image6.jpg';
+
     @ViewChild('googlemap') googlemap: any;
     map: google.maps.Map;
     marker: google.maps.Marker;

@@ -1,4 +1,4 @@
-<header>
+<header [ngStyle]="{'background-image': 'url('+building+')'}">
   <div class="container">
     <div class="header-text">
       <h1>LEARN FROM THE PAST</h1>
@@ -14,7 +14,7 @@
     </div>
     <div class="content">
       <div class="images left">
-          <img src="../../assets//images//image1.jpg" alt="">
+          <img [src]=sanitizeSrc(image1) alt="">
       </div>
       <div class="arrowbox left to-left">
         <p>Lorem ipsum dolor sit amet.</p>
@@ -22,7 +22,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veritatis est earum!</p>
       </div>
       <div class="images left go-right">
-          <img src="../../assets//images//image3.jpg" alt="">
+          <img [src]=sanitizeSrc(image3) alt="">
         </div>
             <div class="arrowbox right to-up">
               <p>Lorem ipsum dolor sit amet.</p>
@@ -30,7 +30,7 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veritatis est earum!</p>
             </div>
       <div class="images right go-left">
-          <img src="../../assets//images//image2.jpg" alt="">
+          <img [src]=sanitizeSrc(image2) alt="">
       </div>
       <div class="arrowbox right to-right go-left">
           <p>Lorem ipsum dolor sit amet.</p>

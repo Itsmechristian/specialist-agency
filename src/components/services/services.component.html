@@ -1,5 +1,5 @@
 <div class="services">
-   <header>
+   <header [ngStyle]="{'background-image': 'url('+ image5 +')'}">
        <div class="container">
            <h1>OUR services</h1>
        </div>
@@ -9,7 +9,7 @@
        <div class="box-wrapper">
         <div class="box">
             <div class="left-side">
-                <img src="/assets/images/planning.jpg" alt="test-image">
+                <img [src]=sanitizeSrc(planning) alt="test-image">
             </div>
             <div class="right-side">
                 <div class="text-wrapper">
@@ -35,7 +35,7 @@
             </div>
             <div class="box">
                 <div class="left-side">
-                    <img src="/assets/images/gavel.jpg" alt="test-image">
+                    <img [src]=sanitizeSrc(gavel) alt="test-image">
                 </div>
                 <div class="right-side">
                     <div class="text-wrapper">
@@ -48,7 +48,7 @@
             </div>
             <div class="box">
                 <div class="left-side">
-                    <img src="/assets/images/taxes.jpg" alt="test-image">
+                    <img [src]=sanitizeSrc(taxes) alt="test-image">
                 </div>
                 <div class="right-side">
                     <div class="text-wrapper">
