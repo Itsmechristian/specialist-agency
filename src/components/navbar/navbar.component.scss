@@ -38,6 +38,11 @@ nav{
     }
   }
 }
+@media screen and (min-width: 769px) {
+.menus {
+  display: none;
+}
+}
 
 @media screen and (max-width: 786px) {
   .links{
@@ -70,17 +75,35 @@ nav{
     }
   }
   .menus{
+    overflow: hidden;
     position: absolute;
     top: 97%;
-    height: 300px;
-    width: 300px;
+    height: auto;
+    width: auto;
     right: 0;
     background: #fff;
+
+    ul{
+      margin: 0;
+      padding: 0;
+
+      li{
+        margin: 20px 10px;
+
+        a{
+          color: #474747;
+        }
+      }
+    }
   }
 }
 
 @media screen and (max-width: 560px) {
-  nav{
-    height: auto;
-  }
+ nav{
+   height: auto;
+ }
+
+ .menus{
+   top: 102%;
+ }
 }

@@ -41,7 +41,7 @@ h1{
     header{
         height: 400px;  
         width: 100%;
-        background: url('/assets/images/teamwork.jpg') 100% 60%;
+        background: url('/assets/images/image4.jpg') 100% 60%;
 
         .container{
 
@@ -160,4 +160,13 @@ h1{
             }
         }
     } 
+}
+
+@media screen and (max-width: 560px){
+    h1.with-line{
+
+        &:after{
+            display: none !important;
+        }
+    }
 }

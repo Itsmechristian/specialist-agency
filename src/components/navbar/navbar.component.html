@@ -15,7 +15,12 @@
       <span></span>
     </div>
     <div class="menus" [@animatenavbar]="navbarState">
-
+      <ul>
+        <li><a routerLink="/" (click)="animateNavbar()">Home</a></li>
+        <li><a routerLink="about" (click)="animateNavbar()">About</a></li>
+        <li><a routerLink="services" (click)="animateNavbar()">Services</a></li>
+        <li><a routerLink="contact" (click)="animateNavbar()">Contact</a></li>
+      </ul>
     </div>
   </div>
 </nav>

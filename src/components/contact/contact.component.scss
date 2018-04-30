@@ -7,7 +7,7 @@
     header{
         height: 400px;
         width: 100%;
-        background: url('/assets/images/teaching.png') 100% 70%;
+        background: url('/assets/images/image6.jpg') 20% 30%;
 
         .container{
             height: 100%;
@@ -99,9 +99,17 @@
                     }
 
                     input{
+                        box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
                         height: 40px;
+                        padding: 0px 5px;
                     }
                     textarea{
+                        box-sizing: border-box;
+                        -moz-box-sizing: border-box;
+                        -webkit-box-sizing: border-box;
+                        padding: 5px;
                         font: 400 13.3333px Arial;
                         height: 300px;
                         resize: none;

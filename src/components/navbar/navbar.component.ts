@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -31,6 +31,13 @@ export class NavbarComponent {
 
   navbarState: String = 'hide';
   
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    if(window.innerWidth > 768) {
+      this.navbarState = 'hide';
+    }
+  }
+
   animateNavbar() {
     (this.navbarState === 'hide') ? this.navbarState = 'show' : this.navbarState = 'hide';
   }
