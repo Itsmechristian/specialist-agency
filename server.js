@@ -8,4 +8,4 @@ app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'))
 })
 
-app.listen(5000, () => console.log('Connected to server'))
+app.listen(4000, () => console.log('Connected to server'))
