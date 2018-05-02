@@ -1,5 +1,5 @@
 <div class="contact">
-    <header [ngStyle]="{'background-image': 'url('+ image6 +')'}">
+    <header>
         <div class="container">
             <h1>Contact Us</h1>
         </div>
@@ -27,22 +27,26 @@
             </div>
         </div>
         <div class="form">
-            <form action="#">
+            <form #f="ngForm" [formGroup]="contactForm" (submit)="onSubmit(f)">
                 <div class="wrapper">
                     <label for="name">Name</label>
-                    <input type="text">
+                    <input type="text" formControlName="name">
+                    <small *ngIf="!contactForm.controls['name'].valid && contactForm.controls['name'].touched">Name is required</small>
                 </div>
                 <div class="wrapper">
                     <label for="email">Email</label>
-                    <input type="email">
+                    <input type="email" formControlName="email">
+                    <small *ngIf="!contactForm.controls['email'].value && contactForm.controls['email'].touched">Email is required</small>
+                    <small *ngIf="!contactForm.controls['email'].valid && contactForm.controls['email'].touched && contactForm.controls['email'].value">Email is not valid</small>
                 </div>
                 <div class="wrapper">
                     <label for="phone">Phone</label>
-                    <input type="phone">
+                    <input type="number" formControlName="phone">
+                    <small *ngIf="!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched && contactForm.controls['phone'].value">Phone is not valid</small>
                 </div>
                 <div class="wrapper">
                     <label for="message">Message</label>
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" formControlName="message"></textarea>
                 </div>
                 <a href="#">Submit</a>
             </form>

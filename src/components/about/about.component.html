@@ -1,7 +1,6 @@
 <div class="about">
-    <header [ngStyle]="{'background-image': 'url('+ image4 +')'}">
+    <header>
         <div class="container">
-            <h1>{{test}}</h1>
             <h1>About Us</h1>
         </div>
     </header>
@@ -9,7 +8,7 @@
             <div class="box-wrapper">
                 <div class="box">
                     <div class="left-side">
-                        <img [src]=sanitizeSrc(teamhands) alt="test-image">
+                        <img src="/assets/images/teamhands.jpg"  alt="test-image">
                     </div>
                     <div class="right-side">
                         <div class="text-wrapper">
@@ -21,7 +20,7 @@
                 </div>
                 <div class="box">
                         <div class="left-side">
-                            <img [src]=sanitizeSrc(teampicture) alt="test-image">
+                            <img src="/assets/images/teampicture.jpg" alt="test-image">
                         </div>
                         <div class="right-side">
                             <div class="text-wrapper">

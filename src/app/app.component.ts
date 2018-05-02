@@ -11,7 +11,7 @@ import { trigger, state, style, animate, query,transition } from '@angular/anima
     trigger('fadeIn', [
       transition('* <=> *', [
         style({ opacity: 0}),
-        animate(500, style({
+        animate(1000, style({
           opacity: 1
         }))
       ])

@@ -8,6 +8,7 @@
         height: 400px;
         width: 100%;
         background-position: 20% 30%;
+        background-image: url('/assets/images/image6.jpg');
 
         .container{
             height: 100%;
@@ -104,6 +105,11 @@
                         -webkit-box-sizing: border-box;
                         height: 40px;
                         padding: 0px 5px;
+                        -moz-appearance: textfield;
+
+                        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button{
+                          -webkit-appearance: none;
+                        }
                     }
                     textarea{
                         box-sizing: border-box;
@@ -113,6 +119,15 @@
                         font: 400 13.3333px Arial;
                         height: 300px;
                         resize: none;
+                    }
+
+                    small {
+                        margin-top: 5px;
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                        font-family: sans-serif;
+                        display: block;
+                        color: crimson;
                     }
                 }
                 >a{

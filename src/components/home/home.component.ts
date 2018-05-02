@@ -1,6 +1,10 @@
-import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, ViewChildren, QueryList, AfterViewInit, EventEmitter } from '@angular/core';
 import { trigger, state, style, animate, transition, group, query } from '@angular/animations';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormGroup, FormControlName, Validators, FormBuilder, NgForm } from '@angular/forms';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
+import { SubmitGuard } from '../../app/submit';
+import { SubmitService } from '../../app/submit.service';
 
 @Component({
   selector: 'home-root',
@@ -12,13 +16,13 @@ import { DomSanitizer } from '@angular/platform-browser';
         style({
           opacity: 0, 
         }),
-        animate(500, style({opacity: 1}))
+        animate(1000, style({opacity: 1}))
       ]),
       transition('animate => *', [
         style({
           opacity: 0, 
         }),
-        animate(500, style({opacity: 1}))
+        animate(1000, style({opacity: 1}))
       ])
   
   ])
@@ -27,12 +31,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HomeComponent implements AfterViewInit{
   fadeState: any = '';
   testimonyIndex: number = 0;
-
-  building: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/building.png';
-  image1: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/image1.jpg';
-  image3: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/image3.jpg';
-  image2: string = 'https://arbiterb-cdn.sirv.com/Specialist-agency/image2.jpg';
-
   
   testimonies: Array<{
      name: string,
@@ -63,9 +61,25 @@ export class HomeComponent implements AfterViewInit{
 
   @ViewChildren('dot') dot: any;
 
+
+  // Form 
+  homeForm: FormGroup;
+
   constructor(
-    private sanitize: DomSanitizer
-  ) {}
+    private sanitize: DomSanitizer,
+    private fb: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute,
+    private submitservice: SubmitService    
+  ) {
+
+    this.homeForm = fb.group({
+      fullname: ['', Validators.required],
+      number: ['', [Validators.required, Validators.pattern("^\\s*(?:\\+?\\d{1,3})?[- (]*\\d{3}(?:[- )]*\\d{3})?[- ]*\\d{4}(?: *[x/#]\\d+)?\\s*$")]],
+      email: ['', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]]
+    })
+
+  }
 
 
   ngAfterViewInit() {
@@ -85,6 +99,11 @@ export class HomeComponent implements AfterViewInit{
 
   sanitizeSrc(imgurl) {
     return this.sanitize.bypassSecurityTrustUrl(imgurl)
-
   }
+
+  onSubmit(f: NgForm) {
+    this.submitservice.sendValidation(f)
+    this.router.navigate(['submitted'], { queryParams: { success: f.valid}})
+  }
+
 }
