@@ -42,13 +42,15 @@
                 <div class="wrapper">
                     <label for="phone">Phone</label>
                     <input type="number" formControlName="phone">
-                    <small *ngIf="!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched && contactForm.controls['phone'].value">Phone is not valid</small>
+                    <small *ngIf="!contactForm.controls['phone'].valid && contactForm.controls['phone'].touched">Phone is not valid</small>
+                
                 </div>
                 <div class="wrapper">
                     <label for="message">Message</label>
                     <textarea name="message" id="message" cols="30" rows="10" formControlName="message"></textarea>
+                    <small *ngIf="!contactForm.controls['message'].valid && contactForm.controls['message'].touched">Message should be atleast 50 characters.</small>
                 </div>
-                <a href="#">Submit</a>
+               <button type="submit" [disabled]="!contactForm.valid">Submit</button>
             </form>
         </div>
     </div>
