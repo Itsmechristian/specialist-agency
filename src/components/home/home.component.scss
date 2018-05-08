@@ -49,6 +49,7 @@
 
 
 header{
+  background-size: 100%;
   background-position: 100% 60%;
   background-image: url('/assets/images/building2.jpg');
 
@@ -349,6 +350,7 @@ header{
         margin: 15px 20px;
 
         label{
+        font-family: Questrial, sans-serif;
           text-align: left;
           color: #fff;
           display: block;
@@ -400,6 +402,12 @@ header{
 }
 
 @media screen and (max-width: 1200px) {
+
+  header{
+    background-size: auto;
+    background-position: 50% 100%;
+  }
+  
   .info{
     height: 1000px;
 
@@ -478,6 +486,7 @@ header{
       }
     }
   }
+
 
   .info{
     height: auto;

@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import {} from '@types/googlemaps';
 import { SubmitService } from '../../app/submit.service';
 import { FormGroup, FormControlName, Validators, FormBuilder, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 declare const google: any;
 
@@ -22,12 +23,14 @@ export class ContactComponent implements OnInit {
     
     constructor(
         private fb: FormBuilder,
+        private submitservice: SubmitService,
+        private router: Router
 
     ) { 
         this.contactForm = fb.group({
             name: ['', Validators.required],
             email: ['', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]],
-            phone: ['', [Validators.required, Validators.pattern("[^ @]*@[^ @]*")]],
+            phone: ['', [Validators.required, Validators.pattern("^\\s*(?:\\+?\\d{1,3})?[- (]*\\d{3}(?:[- )]*\\d{3})?[- ]*\\d{4}(?: *[x/#]\\d+)?\\s*$")]],
             message: ['', [Validators.required, Validators.minLength(50)]]
             
         })
@@ -57,6 +60,7 @@ export class ContactComponent implements OnInit {
     }
 
     onSubmit(f) {
-        
+        this.submitservice.sendValidation(f)
+        this.router.navigate(['submitted'], { queryParams: { success: f.valid}})
     }
 }
